@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="프론트엔드 개발자 포트폴리오 원페이지 사이트입니다."
+    />
+
+    <!-- Open Graph: 링크 공유 시 표시될 기본 정보입니다. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfolio | One Page Website" />
+    <meta
+      property="og:description"
+      content="프로필, 기술 스택, 프로젝트, 경력, 연락처를 담은 포트폴리오입니다."
+    />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+    <title>Portfolio | One Page Website</title>
+
+    <!-- Google Fonts: 한글 본문용 Noto Sans KR, 영문 디스플레이용 Space Grotesk를 사용합니다. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS는 초기화, 변수, 레이아웃 순서로 불러옵니다. -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components/hero.css" />
+    <link rel="stylesheet" href="./css/components/about.css" />
+    <link rel="stylesheet" href="./css/components/techstack.css" />
+    <link rel="stylesheet" href="./css/components/projects.css" />
+
+    <!-- JavaScript는 HTML 파싱 이후 실행되도록 defer 속성을 사용합니다. -->
+    <script src="./js/renderer.js" defer></script>
+    <script src="./js/ui.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- 상단 고정 내비게이션: 각 섹션으로 이동하는 앵커 링크를 제공합니다. -->
+    <header class="site-header">
+      <nav class="site-nav" aria-label="주요 섹션">
+        <a class="site-logo" href="#hero" aria-label="홈으로 이동">Portfolio</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+        >
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+
+        <ul class="nav-list" id="primary-menu">
+          <li><a class="nav-link" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#tech-stack">Tech Stack</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 각 섹션은 renderer.js에서 데이터를 받아 채울 수 있도록 빈 껍데기만 둡니다. -->
+      <section class="section section--hero" id="hero" data-animate></section>
+      <section class="section" id="about" data-animate></section>
+      <section class="section" id="tech-stack" data-animate></section>
+      <section class="section" id="projects" data-animate></section>
+      <section class="section" id="experience" data-animate></section>
+      <section class="section" id="contact" data-animate></section>
+    </main>
+  </body>
+</html>

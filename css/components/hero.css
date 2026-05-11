@@ -1,0 +1,226 @@
+/* Hero 섹션 전체를 첫 화면 높이에 맞추고 중앙 정렬합니다. */
+.section--hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-2xl);
+  isolation: isolate;
+}
+
+/* 배경색 위에 은은한 그라디언트와 노이즈 느낌의 패턴을 겹칩니다. */
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(rgba(237, 242, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 242, 255, 0.026) 1px, transparent 1px),
+    radial-gradient(circle at 20% 24%, rgba(79, 140, 255, 0.3), transparent 28rem),
+    radial-gradient(circle at 80% 70%, rgba(45, 212, 191, 0.17), transparent 24rem),
+    linear-gradient(145deg, rgba(18, 26, 47, 0.92), var(--color-background) 64%);
+  background-size:
+    28px 28px,
+    28px 28px,
+    auto,
+    auto,
+    auto;
+}
+
+.hero__background::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px);
+  background-size: 12px 12px;
+  opacity: 0.16;
+  mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+}
+
+.hero__content {
+  width: min(100%, var(--container-width));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__name-en {
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero__name {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero__tagline {
+  max-width: 760px;
+  margin: var(--space-xl) auto 0;
+  color: var(--color-text);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+.hero__sub-tagline {
+  max-width: 680px;
+  margin: var(--space-md) auto 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: min(100%, 340px);
+  margin: var(--space-xl) auto 0;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.hero__button:hover,
+.hero__button:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.hero__button--primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 18px 45px rgba(79, 140, 255, 0.25);
+}
+
+.hero__button--primary:hover,
+.hero__button--primary:focus-visible {
+  background: #6fa1ff;
+}
+
+.hero__button--secondary {
+  border-color: rgba(237, 242, 255, 0.36);
+  color: var(--color-text);
+  background: rgba(237, 242, 255, 0.04);
+}
+
+.hero__button--secondary:hover,
+.hero__button--secondary:focus-visible {
+  border-color: var(--color-accent);
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.hero__scroll-arrow {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  animation: hero-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(45deg);
+  }
+}
+
+/* 움직임 감소 설정을 사용하는 사용자에게는 반복 애니메이션을 제거합니다. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-arrow {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .section--hero {
+    padding-right: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .hero__name-en {
+    font-size: 1rem;
+  }
+
+  .hero__name {
+    font-size: 5rem;
+  }
+
+  .hero__tagline {
+    font-size: 2.1rem;
+  }
+
+  .hero__sub-tagline {
+    font-size: 1.12rem;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  .hero__button {
+    min-width: 168px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__name {
+    font-size: 7.5rem;
+  }
+
+  .hero__tagline {
+    font-size: 2.75rem;
+  }
+}
