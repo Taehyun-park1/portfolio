@@ -1,0 +1,40 @@
+<svg width="960" height="520" viewBox="0 0 960 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="520" rx="20" fill="#F7F9FB"/>
+  <rect x="48" y="48" width="864" height="424" rx="16" fill="#FFFFFF" stroke="#C5C5D3"/>
+  <text x="96" y="104" fill="#00236F" font-family="Arial, sans-serif" font-size="28" font-weight="700">Romantic Hamilton Architecture</text>
+  <text x="96" y="138" fill="#444651" font-family="Arial, sans-serif" font-size="15">Brand site, product showcase, inquiry, reservation, auth, and admin dashboard</text>
+
+  <rect x="96" y="196" width="190" height="96" rx="12" fill="#D5E4F8" stroke="#1E3A8A"/>
+  <text x="191" y="234" text-anchor="middle" fill="#00236F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Frontend</text>
+  <text x="191" y="262" text-anchor="middle" fill="#444651" font-family="Arial, sans-serif" font-size="14">React · TypeScript · Vite</text>
+
+  <rect x="386" y="178" width="190" height="132" rx="12" fill="#F2F4F6" stroke="#C5C5D3"/>
+  <text x="481" y="216" text-anchor="middle" fill="#00236F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Supabase</text>
+  <text x="481" y="245" text-anchor="middle" fill="#444651" font-family="Arial, sans-serif" font-size="14">Auth · DB · RLS</text>
+  <text x="481" y="270" text-anchor="middle" fill="#444651" font-family="Arial, sans-serif" font-size="14">Messages · Reservations</text>
+
+  <rect x="674" y="196" width="190" height="96" rx="12" fill="#E6E8EA" stroke="#C5C5D3"/>
+  <text x="769" y="234" text-anchor="middle" fill="#00236F" font-family="Arial, sans-serif" font-size="18" font-weight="700">Express API</text>
+  <text x="769" y="262" text-anchor="middle" fill="#444651" font-family="Arial, sans-serif" font-size="14">Naver OAuth callback</text>
+
+  <rect x="144" y="362" width="164" height="58" rx="10" fill="#FFFFFF" stroke="#C5C5D3"/>
+  <text x="226" y="397" text-anchor="middle" fill="#191C1E" font-family="Arial, sans-serif" font-size="15" font-weight="700">User / Visitor</text>
+
+  <rect x="398" y="362" width="164" height="58" rx="10" fill="#FFFFFF" stroke="#C5C5D3"/>
+  <text x="480" y="397" text-anchor="middle" fill="#191C1E" font-family="Arial, sans-serif" font-size="15" font-weight="700">Admin</text>
+
+  <rect x="652" y="362" width="164" height="58" rx="10" fill="#FFFFFF" stroke="#C5C5D3"/>
+  <text x="734" y="397" text-anchor="middle" fill="#191C1E" font-family="Arial, sans-serif" font-size="15" font-weight="700">Kakao / Naver</text>
+
+  <path d="M286 244H386" stroke="#00236F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M576 244H674" stroke="#00236F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M226 362V292" stroke="#00236F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M480 362V310" stroke="#00236F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M734 362L769 292" stroke="#00236F" stroke-width="3" stroke-linecap="round"/>
+
+  <circle cx="316" cy="244" r="5" fill="#00236F"/>
+  <circle cx="622" cy="244" r="5" fill="#00236F"/>
+  <circle cx="226" cy="328" r="5" fill="#00236F"/>
+  <circle cx="480" cy="336" r="5" fill="#00236F"/>
+  <circle cx="752" cy="328" r="5" fill="#00236F"/>
+</svg>
