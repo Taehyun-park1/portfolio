@@ -3,82 +3,448 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="프론트엔드 개발자 포트폴리오 원페이지 사이트입니다."
-    />
-
-    <!-- Open Graph: 링크 공유 시 표시될 기본 정보입니다. -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Portfolio | One Page Website" />
-    <meta
-      property="og:description"
-      content="프로필, 기술 스택, 프로젝트, 경력, 연락처를 담은 포트폴리오입니다."
-    />
-    <meta property="og:url" content="https://example.com" />
-    <meta property="og:image" content="https://example.com/og-image.jpg" />
-
-    <title>Portfolio | One Page Website</title>
-
-    <!-- Google Fonts: 한글 본문용 Noto Sans KR, 영문 디스플레이용 Space Grotesk를 사용합니다. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS는 초기화, 변수, 레이아웃 순서로 불러옵니다. -->
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/variables.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
-    <link rel="stylesheet" href="./css/components/hero.css" />
-    <link rel="stylesheet" href="./css/components/about.css" />
-    <link rel="stylesheet" href="./css/components/techstack.css" />
-    <link rel="stylesheet" href="./css/components/projects.css" />
-
-    <!-- JavaScript는 HTML 파싱 이후 실행되도록 defer 속성을 사용합니다. -->
-    <script src="./js/renderer.js" defer></script>
-    <script src="./js/ui.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <title>개발자 포트폴리오 - 백엔드 개발자</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- 상단 고정 내비게이션: 각 섹션으로 이동하는 앵커 링크를 제공합니다. -->
-    <header class="site-header">
-      <nav class="site-nav" aria-label="주요 섹션">
-        <a class="site-logo" href="#hero" aria-label="홈으로 이동">Portfolio</a>
+    <header class="site-header" id="siteHeader">
+      <nav class="navbar" aria-label="주요 메뉴">
+        <a class="brand" href="#hero" aria-label="홈으로 이동">
+          <span class="brand-text">개발자 포트폴리오</span>
+        </a>
 
         <button
-          class="nav-toggle"
+          class="menu-toggle"
           type="button"
           aria-label="메뉴 열기"
           aria-expanded="false"
-          aria-controls="primary-menu"
+          aria-controls="navMenu"
         >
-          <span class="nav-toggle__line"></span>
-          <span class="nav-toggle__line"></span>
-          <span class="nav-toggle__line"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-        <ul class="nav-list" id="primary-menu">
-          <li><a class="nav-link" href="#hero">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#tech-stack">Tech Stack</a></li>
-          <li><a class="nav-link" href="#projects">Projects</a></li>
-          <li><a class="nav-link" href="#experience">Experience</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+        <ul class="nav-menu" id="navMenu">
+          <li><a class="nav-link active" href="#about">소개</a></li>
+          <li><a class="nav-link" href="#stack">기술 스택</a></li>
+          <li><a class="nav-link" href="#projects">프로젝트</a></li>
+          <li><a class="nav-link" href="#contact">연락처</a></li>
+          <li><a class="resume-link" href="#contact">이력서</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <!-- 각 섹션은 renderer.js에서 데이터를 받아 채울 수 있도록 빈 껍데기만 둡니다. -->
-      <section class="section section--hero" id="hero" data-animate></section>
-      <section class="section" id="about" data-animate></section>
-      <section class="section" id="tech-stack" data-animate></section>
-      <section class="section" id="projects" data-animate></section>
-      <section class="section" id="experience" data-animate></section>
-      <section class="section" id="contact" data-animate></section>
+      <section class="section hero-section" id="hero">
+        <div class="container">
+          <p class="eyebrow">백엔드 개발자 포트폴리오</p>
+          <h1>안정적인 백엔드와<br />신뢰할 수 있는 서비스를 만듭니다.</h1>
+          <p class="hero-description">
+            Java와 Spring을 중심으로 안정적인 API, 효율적인 데이터베이스 설계,
+            배포 가능한 서버 환경을 학습하고 구현하는 신입 백엔드 개발자입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">연락하기</a>
+            <a class="button button-secondary" href="#projects"
+              >프로젝트 보기</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="about">
+        <div class="container">
+          <div class="about-layout">
+            <div class="about-summary">
+              <h2>소개</h2>
+              <p>
+                서버 로직과 데이터 흐름을 이해하는 백엔드 개발자로 성장하고
+                있습니다. 기능 구현뿐 아니라 예외 처리, 쿼리 효율, 배포 환경까지
+                함께 고민하며 유지보수하기 쉬운 코드를 작성하려고 노력합니다.
+              </p>
+              <div class="profile-meta">
+                <div>
+                  <h3>교육</h3>
+                  <p>백엔드 개발자 과정</p>
+                </div>
+                <div>
+                  <h3>관심 분야</h3>
+                  <p>Java, Spring, SQL, AWS</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-card-grid">
+              <article class="info-card card-hover">
+                <div class="card-icon">DB</div>
+                <h3>문제를 끝까지 추적하는 끈기</h3>
+                <p>
+                  로그, 실행 흐름, 데이터 상태를 차근차근 확인하며 원인을
+                  좁혀갑니다.
+                </p>
+              </article>
+              <article class="info-card card-hover">
+                <div class="card-icon">API</div>
+                <h3>기본기를 중요하게 생각하는 태도</h3>
+                <p>
+                  HTTP, SQL, Java 문법, Spring 구조처럼 기반이 되는 내용을
+                  꾸준히 복습합니다.
+                </p>
+              </article>
+              <article class="info-card info-card-wide card-hover">
+                <div class="card-icon">CI</div>
+                <h3>협업과 소통을 배우려는 자세</h3>
+                <p>
+                  작업 내용을 명확히 공유하고, 피드백을 다음 코드 개선으로
+                  연결하려고 노력합니다.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="stack">
+        <div class="container">
+          <div class="section-heading center">
+            <h2>기술 스택</h2>
+            <p>
+              진행한 프로젝트에서 실제로 사용한 기술을 기준으로 정리했습니다.
+            </p>
+          </div>
+
+          <div class="stack-showcase">
+            <article
+              class="stack-focus-panel"
+              id="stackFocusPanel"
+              aria-live="polite"
+            >
+              <p class="stack-kicker">핵심 기술</p>
+              <h3 id="stackFocusTitle">백엔드</h3>
+              <p id="stackFocusDescription">
+                Java와 Spring Boot를 중심으로 API, 인증, 알림, 채팅 흐름을
+                구현했습니다.
+              </p>
+              <div class="skill-list" id="stackFocusSkills"></div>
+            </article>
+
+            <div
+              class="stack-tabs"
+              role="tablist"
+              aria-label="기술 스택 카테고리"
+            >
+              <button
+                class="stack-tab active"
+                type="button"
+                data-stack="backend"
+                role="tab"
+                aria-selected="true"
+              >
+                <strong>백엔드</strong>
+                <span>Java · Spring Boot · MyBatis</span>
+              </button>
+              <button
+                class="stack-tab"
+                type="button"
+                data-stack="frontend"
+                role="tab"
+                aria-selected="false"
+              >
+                <strong>프론트엔드</strong>
+                <span>React · JavaScript · TypeScript</span>
+              </button>
+              <button
+                class="stack-tab"
+                type="button"
+                data-stack="database"
+                role="tab"
+                aria-selected="false"
+              >
+                <strong>데이터베이스</strong>
+                <span>MySQL · Oracle · Supabase</span>
+              </button>
+              <button
+                class="stack-tab"
+                type="button"
+                data-stack="infra"
+                role="tab"
+                aria-selected="false"
+              >
+                <strong>인프라 / 배포</strong>
+                <span>Docker · AWS · Vercel · Render</span>
+              </button>
+              <button
+                class="stack-tab"
+                type="button"
+                data-stack="integration"
+                role="tab"
+                aria-selected="false"
+              >
+                <strong>연동</strong>
+                <span>REST API · OAuth · WebSocket · SSE</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <h2>주요 프로젝트</h2>
+          </div>
+
+          <div class="project-grid">
+            <article
+              class="project-card card-hover project-modal-card"
+              tabindex="0"
+              role="button"
+              aria-label="WeMove 프로젝트 상세 보기"
+              data-project="wemove"
+            >
+              <div class="project-image project-image-community">
+                <img
+                  src="images/projects/wemove-thumb.png"
+                  alt="WeMove 메인 화면"
+                />
+              </div>
+              <div class="project-content">
+                <h3>WeMove</h3>
+                <p>
+                  지역과 운동 종목을 기준으로 모임을 탐색하고, 생성부터 참여
+                  관리까지 처리하는 운동 모임 매칭 플랫폼입니다.
+                </p>
+                <div class="tag-list small">
+                  <span>Java</span><span>Spring Boot</span><span>MySQL</span
+                  ><span>React</span><span>WebSocket</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    class="text-link project-link"
+                    href="https://github.com/Taehyun-park1/WeMove"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    class="text-link project-link"
+                    href="https://wemove-web.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card card-hover project-modal-card"
+              tabindex="0"
+              role="button"
+              aria-label="GreenCarry 프로젝트 상세 보기"
+              data-project="greencarry"
+            >
+              <div class="project-image project-image-shop">
+                <img
+                  src="images/projects/greencarry-thumb.png"
+                  alt="GreenCarry 메인 화면"
+                />
+              </div>
+              <div class="project-content">
+                <h3>GreenCarry</h3>
+                <p>
+                  다회용기와 친환경 배달 방식을 중심으로 주문, 결제, 포인트,
+                  탄소 절감량을 연결한 음식 주문 플랫폼입니다.
+                </p>
+                <div class="tag-list small">
+                  <span>Java</span><span>Spring Boot</span><span>Oracle</span
+                  ><span>React</span><span>SSE</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    class="text-link project-link"
+                    href="https://github.com/Taehyun-park1/green_carry"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    class="text-link project-link"
+                    href="https://greencarry.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card card-hover project-modal-card"
+              tabindex="0"
+              role="button"
+              aria-label="게시판 프로젝트 상세 보기"
+              data-project="board"
+            >
+              <div class="project-image project-image-board">
+                <span>게시판</span>
+              </div>
+              <div class="project-content">
+                <h3>게시판 프로젝트</h3>
+                <p>
+                  게시글 CRUD, 검색, 페이징을 구현한 Java/Spring 기반
+                  게시판입니다.
+                </p>
+                <div class="tag-list small">
+                  <span>Java</span><span>Spring</span><span>Oracle</span
+                  ><span>JSP</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    class="text-link project-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    class="text-link project-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card card-hover project-modal-card"
+              tabindex="0"
+              role="button"
+              aria-label="Romantic Hamilton 프로젝트 상세 보기"
+              data-project="romantichamilton"
+            >
+              <div class="project-image project-image-portfolio">
+                <img
+                  src="images/projects/romantichamilton-thumb.png"
+                  alt="Romantic Hamilton 메인 화면"
+                />
+              </div>
+              <div class="project-content">
+                <h3>Romantic Hamilton</h3>
+                <span class="project-badge">개인 프로젝트</span>
+                <p>
+                  수제 가죽공방 브랜드를 소개하고 제품, 맞춤 제작 문의, 클래스
+                  예약, 회원/관리자 흐름을 연결한 브랜드 웹 서비스입니다.
+                </p>
+                <div class="tag-list small">
+                  <span>React</span><span>TypeScript</span><span>Vite</span
+                  ><span>Supabase</span><span>Express</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    class="text-link project-link"
+                    href="https://github.com/Taehyun-park1/romantichamilton"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    class="text-link project-link"
+                    href="https://www.romantichamilton.store/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="section-heading center">
+            <h2>연락처</h2>
+          </div>
+
+          <div class="contact-grid">
+            <a
+              class="contact-card card-hover"
+              href="mailto:backend.dev@example.com"
+            >
+              <span class="contact-icon">메일</span>
+              <strong>이메일</strong>
+              <small>taehyun.park.dev@gmail.com</small>
+            </a>
+            <a
+              class="contact-card card-hover"
+              href="https://github.com/Taehyun-park1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-icon">코드</span>
+              <strong>GitHub</strong>
+              <small>github.com/Taehyun-park1</small>
+            </a>
+            <a
+              class="contact-card card-hover"
+              href="https://open.kakao.com/o/sHI7uLFf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-icon">채팅</span>
+              <strong>카카오 오픈채팅</strong>
+              <small>오픈채팅 바로가기</small>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <div>
+          <strong>개발자 포트폴리오</strong>
+          <p>© 2026 개발자 포트폴리오. 백엔드 중심으로 제작했습니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">GitHub</a>
+          <a href="#">블로그</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <button
+        class="project-modal-backdrop"
+        type="button"
+        aria-label="프로젝트 상세 배경 닫기"
+      ></button>
+      <article
+        class="project-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="projectModalTitle"
+      >
+        <button
+          class="project-modal-close"
+          type="button"
+          aria-label="프로젝트 상세 닫기"
+        >
+          ×
+        </button>
+        <div class="project-modal-body" id="projectModalBody"></div>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
