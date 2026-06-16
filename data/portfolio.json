@@ -140,6 +140,87 @@
       "demoVideo": "",
       "thumbnail": "/images/projects/project01-thumb.png",
       "highlights": "단순 CRUD를 넘어 인프라 전체 흐름을 직접 구성하고 트러블슈팅한 프로젝트"
+    },
+    {
+      "id": "project-02",
+      "title": "WeMove",
+      "subtitle": "지역 기반 운동 모임 매칭 플랫폼",
+      "period": "2026.05 – 2026.06",
+      "teamSize": 1,
+      "role": "프론트엔드 · 백엔드 · 알림/채팅 흐름 구현",
+      "description": "지역, 운동 종목, 날짜, 모집 상태를 기준으로 운동 모임을 탐색하고 생성·참여·관리할 수 있는 플랫폼입니다. 모임 신청 승인/거절, 내 활동 캘린더, 관리자 기능, 알림과 채팅 흐름까지 하나의 사용자 경험으로 구성했습니다.",
+      "myPart": [
+        "React/Vite 기반 SPA 화면 구조와 모바일 대응 레이아웃 구현",
+        "모임 생성, 상세, 신청자 관리, 내 활동 페이지의 주요 사용자 흐름 구현",
+        "Spring Boot + MyBatis 기반 모임, 참가자, 댓글, 관리자 API 연동",
+        "전역 알림 패널, 알림 이벤트 정규화, 채팅 이벤트 처리 흐름 구현",
+        "Vite 빌드와 배포 환경을 고려한 프론트엔드 구조 정리"
+      ],
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "MyBatis",
+        "React",
+        "Vite",
+        "MySQL",
+        "Axios",
+        "WebSocket",
+        "JWT"
+      ],
+      "features": [
+        "지역/종목/날짜/상태 기반 운동 모임 검색",
+        "모임 생성, 수정, 삭제와 참가 신청 승인/거절",
+        "내 활동 캘린더와 참여 예정/대기/완료 상태 관리",
+        "관리자 회원/모임/신고/운동 종목 관리",
+        "알림 패널과 모임 채팅 이벤트 처리"
+      ],
+      "architectureDiagram": "/images/projects/wemove-architecture.svg",
+      "github": "",
+      "liveUrl": "http://127.0.0.1:5174",
+      "demoVideo": "",
+      "thumbnail": "/images/projects/wemove-thumb.png",
+      "highlights": "운동 모임 탐색부터 참여 관리, 알림, 관리자 운영까지 서비스 흐름 전체를 연결한 프로젝트"
+    },
+    {
+      "id": "project-03",
+      "title": "GreenCarry",
+      "subtitle": "친환경 다회용기 음식 주문 플랫폼",
+      "period": "2026.06",
+      "teamSize": 1,
+      "role": "주문/결제 흐름 · 역할별 마이페이지 · 알림 구조 구현",
+      "description": "다회용기 사용과 친환경 배달 방식을 중심으로 설계한 음식 주문 플랫폼입니다. 사용자, 점주, 관리자 역할을 분리하고 주문, 결제, 포인트, 탄소 절감량, 리뷰, 고객센터, 실시간 알림이 이어지는 풀스택 서비스 흐름을 구현했습니다.",
+      "myPart": [
+        "사용자/점주/관리자 역할별 라우트와 마이페이지 화면 구조 구현",
+        "장바구니, 주문, 결제, 주문 상태 변경 흐름을 프론트와 백엔드로 연결",
+        "Zustand persist 기반 장바구니 상태 유지와 중복 요청 방지 처리",
+        "SSE 기반 실시간 알림 구독, 읽음 처리, 헤더 알림 UI 구현",
+        "Toss Payments, Cloudinary, 이메일 인증, 지도/주소 검색 등 외부 연동 흐름 정리"
+      ],
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "Oracle",
+        "MyBatis",
+        "React",
+        "Vite",
+        "Zustand",
+        "SSE",
+        "Toss Payments"
+      ],
+      "features": [
+        "주변 매장 탐색, 카테고리 필터, 매장 상세 조회",
+        "메뉴 옵션 선택, 다회용기 선택, 장바구니 유지",
+        "포인트 사용과 Toss Payments 결제 흐름",
+        "점주 주문 접수/조리/배달/완료 상태 관리",
+        "관리자 통계, 회원/매장/리뷰/용기 관리",
+        "SSE 기반 주문/리뷰/문의 알림"
+      ],
+      "architectureDiagram": "/images/projects/greencarry-architecture.svg",
+      "github": "",
+      "liveUrl": "http://127.0.0.1:5175",
+      "demoVideo": "",
+      "thumbnail": "/images/projects/greencarry-thumb.png",
+      "highlights": "주문과 운영, 포인트와 탄소 절감량, 실시간 알림까지 연결한 서비스형 풀스택 프로젝트"
     }
   ],
   "experience": [],

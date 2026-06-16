@@ -379,6 +379,7 @@ function initProjectModal(projectsSection) {
   const closeButton = projectsSection.querySelector(".projects__modal-close");
   const backdrop = projectsSection.querySelector(".projects__modal-backdrop");
   const cards = projectsSection.querySelectorAll(".projects__card");
+  const featuredButtons = projectsSection.querySelectorAll(".projects__featured-button");
   const projectsData = Array.from(cards).map((card) => JSON.parse(card.dataset.project || "{}"));
   let lastFocusedElement = null;
 
@@ -425,6 +426,13 @@ function initProjectModal(projectsSection) {
     });
   });
 
+  featuredButtons.forEach((button, index) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      openModal(projectsData[index]);
+    });
+  });
+
   closeButton.addEventListener("click", closeModal);
   backdrop.addEventListener("click", closeModal);
 
@@ -445,6 +453,7 @@ function initProjectModal(projectsSection) {
 function createProjectModalContent(project) {
   const features = Array.isArray(project.features) ? project.features : [];
   const techStack = Array.isArray(project.techStack) ? project.techStack : [];
+  const myPart = Array.isArray(project.myPart) ? project.myPart : [];
   const modalLinks = createProjectLinks(project);
   const hasArchitectureDiagram =
     typeof project.architectureDiagram === "string" && project.architectureDiagram.trim() !== "";
@@ -482,7 +491,23 @@ function createProjectModalContent(project) {
       </dl>
     </div>
 
-    <p class="projects__modal-description">${escapeHTML(project.description)}</p>
+    <div class="projects__modal-section projects__modal-section--summary">
+      <h4>프로젝트 간단 설명</h4>
+      <p class="projects__modal-description">${escapeHTML(project.description)}</p>
+    </div>
+
+    ${
+      myPart.length > 0
+        ? `
+          <div class="projects__modal-section projects__my-part">
+            <h4>내 파트</h4>
+            <ul class="projects__feature-list">
+              ${myPart.map((part) => `<li>${escapeHTML(part)}</li>`).join("")}
+            </ul>
+          </div>
+        `
+        : ""
+    }
 
     <div class="projects__modal-section">
       <h4>주요 기능</h4>
@@ -569,6 +594,7 @@ function renderProjects(projects) {
             <ul class="projects__tags" aria-label="${escapeHTML(project.title)} 기술 스택">
               ${techPreview.map((tech) => `<li>${escapeHTML(tech)}</li>`).join("")}
             </ul>
+            <button class="projects__featured-button" type="button">Featured Architecture</button>
             ${
               highlights
                 ? `<blockquote class="projects__highlight">${escapeHTML(highlights)}</blockquote>`
